@@ -185,7 +185,9 @@ JNIEXPORT jboolean JNICALL Java_com_tencent_yolov8ncnn_Yolov8Ncnn_loadModel(JNIE
     {
         //"n",
         //"s",
-        "best-sim"
+        "attention",
+        "fasternet",
+        "original"
     };
 
     const int target_sizes[] =

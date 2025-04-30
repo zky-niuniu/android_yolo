@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ncnn-yolov8</string>
+    <string name="app_name">井盖智能识别系统</string>
     <string-array name="model_array">
-        <item>best-sim</item>
+        <item>attention</item>
+        <item>fasternet</item>
+        <item>original</item>
     </string-array>
     <string-array name="cpugpu_array">
         <item>CPU</item>

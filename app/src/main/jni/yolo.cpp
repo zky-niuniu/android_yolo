@@ -160,7 +160,7 @@ static void generate_proposals(std::vector<GridAndStride> grid_strides, const nc
             }
         }
         float box_prob = sigmoid(score);
-        if (box_prob >= prob_threshold && box_prob >0.5f)
+        if (box_prob >= prob_threshold && box_prob >0.7f)
         {
             ncnn::Mat bbox_pred(reg_max_1, 4, (void*)pred.row(i));
             {
@@ -246,8 +246,8 @@ int Yolo::load(AAssetManager* mgr, const char* modeltype, int _target_size, cons
 
     char parampath[256];
     char modelpath[256];
-    sprintf(parampath, "%s.param", modeltype);
-    sprintf(modelpath, "%s.bin", modeltype);
+    sprintf(parampath, "best-%s.param", modeltype);
+    sprintf(modelpath, "best-%s.bin", modeltype);
 
     yolo.load_param(mgr, parampath);
     yolo.load_model(mgr, modelpath);
@@ -398,7 +398,7 @@ int Yolo::draw(cv::Mat& rgb, const std::vector<Object>& objects)
     for (size_t i = 0; i < objects.size(); i++)
     {
         const Object& obj = objects[i];
-        if(obj.prob<=0.5f)
+        if(obj.prob<=0.7f)
             continue;
 //         fprintf(stderr, "%d = %.5f at %.2f %.2f %.2f x %.2f\n", obj.label, obj.prob,
 //                 obj.rect.x, obj.rect.y, obj.rect.width, obj.rect.height);
