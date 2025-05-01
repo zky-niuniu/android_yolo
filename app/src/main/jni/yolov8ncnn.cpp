@@ -194,16 +194,19 @@ JNIEXPORT jboolean JNICALL Java_com_tencent_yolov8ncnn_Yolov8Ncnn_loadModel(JNIE
     {
         640,
         640,
+        640
     };
 
     const float mean_vals[][3] =
     {
         {103.53f, 116.28f, 123.675f},
         {103.53f, 116.28f, 123.675f},
+        {103.53f, 116.28f, 123.675f},
     };
 
     const float norm_vals[][3] =
     {
+        { 1 / 255.f, 1 / 255.f, 1 / 255.f },
         { 1 / 255.f, 1 / 255.f, 1 / 255.f },
         { 1 / 255.f, 1 / 255.f, 1 / 255.f },
     };
