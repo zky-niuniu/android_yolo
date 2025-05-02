@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         //applicationId "com.tencent.yolov8ncnn"
-        applicationId "example.recognize"
+        applicationId "com.tencent.yolov8ncnn"
         archivesBaseName = "$applicationId"
 
         minSdkVersion 24

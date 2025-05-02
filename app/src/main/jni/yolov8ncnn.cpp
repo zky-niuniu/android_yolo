@@ -11,7 +11,6 @@
 // under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 // CONDITIONS OF ANY KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations under the License.
-
 #include <android/asset_manager_jni.h>
 #include <android/native_window_jni.h>
 #include <android/native_window.h>
@@ -187,11 +186,17 @@ JNIEXPORT jboolean JNICALL Java_com_tencent_yolov8ncnn_Yolov8Ncnn_loadModel(JNIE
         //"s",
         "attention",
         "fasternet",
-        "original"
+        "original",
+        "eucalyputs",
+        "fasternet2",
+        "attention2"
     };
 
     const int target_sizes[] =
     {
+        640,
+        640,
+        640,
         640,
         640,
         640
@@ -199,16 +204,24 @@ JNIEXPORT jboolean JNICALL Java_com_tencent_yolov8ncnn_Yolov8Ncnn_loadModel(JNIE
 
     const float mean_vals[][3] =
     {
+
         {103.53f, 116.28f, 123.675f},
         {103.53f, 116.28f, 123.675f},
         {103.53f, 116.28f, 123.675f},
+        {103.53f, 116.28f, 123.675f},
+        {103.53f, 116.28f, 123.675f},
+        {103.53f, 116.28f, 123.675f}
     };
 
     const float norm_vals[][3] =
     {
+
         { 1 / 255.f, 1 / 255.f, 1 / 255.f },
         { 1 / 255.f, 1 / 255.f, 1 / 255.f },
         { 1 / 255.f, 1 / 255.f, 1 / 255.f },
+        { 1 / 255.f, 1 / 255.f, 1 / 255.f },
+        { 1 / 255.f, 1 / 255.f, 1 / 255.f },
+        { 1 / 255.f, 1 / 255.f, 1 / 255.f }
     };
 
     const char* modeltype = modeltypes[(int)modelid];

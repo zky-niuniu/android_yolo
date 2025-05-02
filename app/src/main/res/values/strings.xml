@@ -5,6 +5,9 @@
         <item>attention</item>
         <item>fasternet</item>
         <item>original</item>
+        <item>eucalyputs</item>
+        <item>fasternet2</item>
+        <item>attention2</item>
     </string-array>
     <string-array name="cpugpu_array">
         <item>CPU</item>
