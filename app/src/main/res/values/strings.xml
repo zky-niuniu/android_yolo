@@ -2,12 +2,10 @@
 <resources>
     <string name="app_name">井盖智能识别系统</string>
     <string-array name="model_array">
-        <item>attention</item>
-        <item>fasternet</item>
         <item>original</item>
         <item>eucalyputs</item>
-        <item>fasternet2</item>
-        <item>attention2</item>
+        <item>fasternet</item>
+        <item>attention</item>
     </string-array>
     <string-array name="cpugpu_array">
         <item>CPU</item>
