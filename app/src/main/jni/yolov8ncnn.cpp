@@ -168,6 +168,13 @@ JNIEXPORT void JNI_OnUnload(JavaVM* vm, void* reserved)
     g_camera = 0;
 }
 
+JNIEXPORT void JNICALL Java_com_tencent_yolov8ncnn_Yolov8Ncnn_reportManholeIssue(JNIEnv* env, jobject thiz, jdouble latitude, jdouble longitude, jstring description)
+{
+    const char* desc = env->GetStringUTFChars(description, 0);
+    __android_log_print(ANDROID_LOG_DEBUG, "ncnn", "Report manhole issue at %f,%f: %s", latitude, longitude, desc);
+    env->ReleaseStringUTFChars(description, desc);
+}
+
 // public native boolean loadModel(AssetManager mgr, int modelid, int cpugpu);
 JNIEXPORT jboolean JNICALL Java_com_tencent_yolov8ncnn_Yolov8Ncnn_loadModel(JNIEnv* env, jobject thiz, jobject assetManager, jint modelid, jint cpugpu)
 {

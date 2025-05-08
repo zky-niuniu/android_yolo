@@ -12,7 +12,9 @@ android {
 
         minSdkVersion 24
     }
-
+    dexOptions{
+        javaMaxHeapSize "4g"
+    }
     externalNativeBuild {
         cmake {
             version "3.10.2"
@@ -22,5 +24,7 @@ android {
 
     dependencies {
         implementation 'com.android.support:support-v4:24.0.0'
+        implementation 'com.amap.api:3dmap:6.1.0'
+        implementation 'com.amap.api:location:6.1.0'
     }
 }
