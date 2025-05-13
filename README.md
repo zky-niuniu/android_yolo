@@ -1,6 +1,6 @@
 # android_yolo
 
-此为基于yolo的android解决方案
+此为基于yolo的android解决方案[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/zky-niuniu/android_yolo)
 
 拥有四个不同的模型：
 
